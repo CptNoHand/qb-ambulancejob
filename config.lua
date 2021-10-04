@@ -6,7 +6,7 @@ Config.WipeInventoryOnRespawn = true
 Config.Locations = {
     ["checking"] = vector3(308.19, -595.35, 43.29),
     ["duty"] = {
-        [1] = vector3(311.18, -599.25, 43.29),
+        [1] = vector3(311.9, -600.81, 43.29),
         [2] = vector3(-254.88, 6324.5, 32.58),
     },
     ["vehicle"] = {
@@ -18,7 +18,7 @@ Config.Locations = {
         [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
     },
     ["armory"] = {
-        [1] = vector3(309.93, -602.94, 43.29),
+        [1] = vector3(314.96, -601.74, 43.29),
         [2] = vector3(-245.13, 6315.71, 32.82),
     },
     ["roof"] = {
@@ -28,14 +28,14 @@ Config.Locations = {
         [1] = vector3(298.44, -599.7, 43.29),
     },
     ["beds"] = {
-        [1] = {coords = vector4(353.1, -584.6, 43.11, 152.08), taken = false, model = 1631638868},
-        [2] = {coords = vector4(356.79, -585.86, 43.11, 152.08), taken = false, model = 1631638868},
-        [3] = {coords = vector4(354.12, -593.12, 43.1, 336.32), taken = false, model = 2117668672},
-        [4] = {coords = vector4(350.79, -591.8, 43.1, 336.32), taken = false, model = 2117668672},
-        [5] = {coords = vector4(346.99, -590.48, 43.1, 336.32), taken = false, model = 2117668672}, 
-        [6] = {coords = vector4(360.32, -587.19, 43.02, 152.08), taken = false, model = -1091386327},
-        [7] = {coords = vector4(349.82, -583.33, 43.02, 152.08), taken = false, model = -1091386327}, 
-        [8] = {coords = vector4(326.98, -576.17, 43.02, 152.08), taken = false, model = -1091386327},
+        [1] = {coords = vector4(349.58, -575.92, 43.11, 152.08), taken = false, model = 2117668672},
+        [2] = {coords = vector4(351.79, -576.86, 43.11, 152.08), taken = false, model = 2117668672},
+        [3] = {coords = vector4(354.36, -577.68, 43.1, 152.08), taken = false, model = 2117668672},
+        [4] = {coords = vector4(356.79, -578.56, 43.1, 152.08), taken = false, model = 2117668672},
+        [5] = {coords = vector4(358.99, -579.31, 43.1, 152.08), taken = false, model = 2117668672}, 
+        [6] = {coords = vector4(356.68, -585.03, 43.02, 337.84), taken = false, model = 2117668672},
+        [7] = {coords = vector4(354.23, -583.97, 43.02, 337.84), taken = false, model = 2117668672}, 
+        [8] = {coords = vector4(351.79, -583.0, 43.02, 337.84), taken = false, model = 2117668672},
     },
     ["stations"] = {
         [1] = {label = "Pillbox Hospital", coords = vector4(304.27, -600.33, 43.28, 272.249)}
