@@ -249,7 +249,7 @@ end)
 QBCore.Commands.Add("status", "Check A Players Health", {}, false, function(source, args)
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
-	if Player.PlayerData.job.name == "ambulance" then
+	if Player.PlayerData.job.name == "ambulance" or Player.PlayerData.job.name == "police" then
 		TriggerClientEvent("hospital:client:CheckStatus", src)
 	else
 		TriggerClientEvent('QBCore:Notify', src, "You Are Not EMS", "error")

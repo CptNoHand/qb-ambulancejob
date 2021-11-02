@@ -123,9 +123,9 @@ Config.Items = {
     }
 }
 
-Config.BillCost = 2000
-Config.DeathTime = 300
-Config.CheckTime = 10
+Config.BillCost = 100
+Config.DeathTime = 480
+Config.CheckTime = 20
 
 Config.PainkillerInterval = 60 -- seconds
 
@@ -161,7 +161,7 @@ Config.MessageTimer = 12
 --[[
     AIHealTimer : How long it will take to be healed after checking in, in seconds
 ]]
-Config.AIHealTimer = 20
+Config.AIHealTimer = 100
 
 --[[ 
     BleedTickRate : How much time, in seconds, between bleed ticks
