@@ -399,7 +399,7 @@ CreateThread(function()
 
             for k, v in pairs(Config.Locations["roof"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z))
-                if dist < 1.5 then
+                if dist < 0.0 then
                     sleep = 7
                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Take the elevator down")
                     if IsControlJustReleased(0, 38) then
