@@ -4,7 +4,10 @@ Config.MinimalDoctors = 2
 Config.WipeInventoryOnRespawn = true
 
 Config.Locations = {
-    ["checking"] = vector3(308.19, -595.35, 43.29),
+    ["checking"] = {
+	[1] = vector3(308.19, -595.35, 43.29),
+	[2] = vector3(-254.54, 6331.78, 32.43), -- paleto
+    },
     ["duty"] = {
         [1] = vector3(311.9, -600.81, 43.29),
         [2] = vector3(-254.88, 6324.5, 32.58),
@@ -37,6 +40,10 @@ Config.Locations = {
         [6] = {coords = vector4(356.68, -585.03, 43.02, 337.84), taken = false, model = 2117668672},
         [7] = {coords = vector4(354.23, -583.97, 43.02, 337.84), taken = false, model = 2117668672}, 
         [8] = {coords = vector4(351.79, -583.0, 43.02, 337.84), taken = false, model = 2117668672},
+        --paleto
+        [9] = {coords = vector4(-252.43, 6312.25, 32.34, 313.48), taken = false, model = 2117668672},
+        [10] = {coords = vector4(-247.04, 6317.95, 32.34, 134.64), taken = false, model = 2117668672},
+        [11] = {coords = vector4(-255.98, 6315.67, 32.34, 313.91), taken = false, model = 2117668672},
     },
     ["stations"] = {
         [1] = {label = "Pillbox Hospital", coords = vector4(304.27, -600.33, 43.28, 272.249)}
