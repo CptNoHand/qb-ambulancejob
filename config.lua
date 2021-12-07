@@ -46,7 +46,8 @@ Config.Locations = {
         [11] = {coords = vector4(-255.98, 6315.67, 32.34, 313.91), taken = false, model = 2117668672},
     },
     ["stations"] = {
-        [1] = {label = "Pillbox Hospital", coords = vector4(304.27, -600.33, 43.28, 272.249)}
+        [1] = {label = "Pillbox Hospital", coords = vector4(304.27, -600.33, 43.28, 272.249)},
+        [2] = {label = "Paleto Hospital", coords = vector4(-252.43, 6312.25, 32.34, 313.48)}
     }
 }
 
@@ -169,7 +170,7 @@ Config.MessageTimer = 12
 --[[
     AIHealTimer : How long it will take to be healed after checking in, in seconds
 ]]
-Config.AIHealTimer = 100
+Config.AIHealTimer = 120
 
 --[[
     BleedTickRate : How much time, in seconds, between bleed ticks

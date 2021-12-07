@@ -1,5 +1,5 @@
 Laststand = Laststand or {}
-Laststand.ReviveInterval = 120
+Laststand.ReviveInterval = 300
 Laststand.MinimumRevive = 350
 InLaststand = false
 LaststandTime = 0
