@@ -663,6 +663,9 @@ RegisterNetEvent('hospital:client:Revive', function()
     TriggerServerEvent("hospital:server:SetLaststandStatus", false)
 
     QBCore.Functions.Notify("You are completely healthy again!")
+
+    TriggerServerEvent('qb-walkstyles:server:walkstyles', 'get')
+    
 end)
 
 RegisterNetEvent('hospital:client:SetPain', function()
