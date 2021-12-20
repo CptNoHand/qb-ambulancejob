@@ -31,6 +31,9 @@ Config.Locations = {
     ["main"] = {
         [1] = vector3(327.02, -603.75, 43.28),
     },
+    ["stash"] = {
+        [1] = vector3(309.78, -596.6, 43.29),
+    },
     ["beds"] = {
         [1] = {coords = vector4(324.2, -583.01, 44.2, 338.39), taken = false, model = 2117668672},
         [2] = {coords = vector4(322.74, -587.01, 44.2, 156.87), taken = false, model = 2117668672},
