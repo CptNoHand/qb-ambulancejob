@@ -59,23 +59,28 @@ Config.AuthorizedVehicles = {
 	-- Grade 0
 	[0] = {
 		["ambulance"] = "Ambulance",
+        ["aemsv450"] = "Ambulance 2",
 	},
 	-- Grade 1
 	[1] = {
 		["ambulance"] = "Ambulance",
+        ["aemsv450"] = "Ambulance 2",
 
 	},
 	-- Grade 2
 	[2] = {
 		["ambulance"] = "Ambulance",
+        ["aemsv450"] = "Ambulance 2",
 	},
 	-- Grade 3
 	[3] = {
 		["ambulance"] = "Ambulance",
+        ["aemsv450"] = "Ambulance 2",
 	},
 	-- Grade 4
 	[4] = {
 		["ambulance"] = "Ambulance",
+        ["aemsv450"] = "Ambulance 2",
 	}
 }
 
