@@ -1,6 +1,6 @@
 Config = {}
 
-Config.MinimalDoctors = 2
+Config.MinimalDoctors = 1
 Config.WipeInventoryOnRespawn = true
 
 Config.Locations = {

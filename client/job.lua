@@ -228,8 +228,8 @@ RegisterNetEvent('hospital:client:TreatWounds', function()
                     disableMouse = false,
                     disableCombat = true,
                 }, {
-                    animDict = healAnimDict,
-                    anim = healAnim,
+                    animDict = "anim@amb@business@weed@weed_inspecting_high_dry@",
+		            anim = "weed_inspecting_high_base_inspector",
                     flags = 16,
                 }, {}, {}, function() -- Done
                     isHealingPerson = false
