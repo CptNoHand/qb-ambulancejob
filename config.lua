@@ -1,7 +1,7 @@
 Config = {}
 
 Config.MinimalDoctors = 1
-Config.WipeInventoryOnRespawn = true
+Config.WipeInventoryOnRespawn = false
 
 Config.Locations = {
     ["checking"] = {
