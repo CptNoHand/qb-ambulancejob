@@ -60,27 +60,41 @@ Config.AuthorizedVehicles = {
 	[0] = {
 		["ambulance"] = "Ambulance",
         ["aemsv450"] = "Ambulance 2",
+        ["ambulance"] = "Ford EMS",
+        ["dodgeEMS"] = "Dodge EMS",
+        ["qrv"] = "Ford Setina EMS",
 	},
 	-- Grade 1
 	[1] = {
 		["ambulance"] = "Ambulance",
         ["aemsv450"] = "Ambulance 2",
-
+        ["ambulance"] = "Ford EMS",
+        ["dodgeEMS"] = "Dodge EMS",
+        ["qrv"] = "Ford Setina EMS",
 	},
 	-- Grade 2
 	[2] = {
 		["ambulance"] = "Ambulance",
         ["aemsv450"] = "Ambulance 2",
+        ["ambulance"] = "Ford EMS",
+        ["dodgeEMS"] = "Dodge EMS",
+        ["qrv"] = "Ford Setina EMS",
 	},
 	-- Grade 3
 	[3] = {
 		["ambulance"] = "Ambulance",
         ["aemsv450"] = "Ambulance 2",
+        ["ambulance"] = "Ford EMS",
+        ["dodgeEMS"] = "Dodge EMS",
+        ["qrv"] = "Ford Setina EMS",
 	},
 	-- Grade 4
 	[4] = {
 		["ambulance"] = "Ambulance",
         ["aemsv450"] = "Ambulance 2",
+        ["ambulance"] = "Ford EMS",
+        ["dodgeEMS"] = "Dodge EMS",
+        ["qrv"] = "Ford Setina EMS",
 	}
 }
 
