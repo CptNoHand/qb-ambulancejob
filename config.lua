@@ -93,44 +93,54 @@ Config.Locations = { -- Edit the various interaction points for players or creat
 Config.AuthorizedVehicles = { -- Vehicles players can use based on their ambulance job grade level
 	-- Grade 0
 	[0] = {
-		["ambulance"] = "Ambulance",
-        ["aemsv450"] = "Ambulance 2",
-        ["ambulance"] = "Ford EMS",
-        ["dodgeEMS"] = "Dodge EMS",
-        ["qrv"] = "Ford Setina EMS",
+		["f750"] = "Krankenwagen",
+        ["exp"] = "Explorer",
 	},
 	-- Grade 1
 	[1] = {
-		["ambulance"] = "Ambulance",
-        ["aemsv450"] = "Ambulance 2",
-        ["ambulance"] = "Ford EMS",
-        ["dodgeEMS"] = "Dodge EMS",
-        ["qrv"] = "Ford Setina EMS",
+		["f750"] = "Krankenwagen",
+        ["exp"] = "Explorer",
 	},
 	-- Grade 2
 	[2] = {
-		["ambulance"] = "Ambulance",
-        ["aemsv450"] = "Ambulance 2",
-        ["ambulance"] = "Ford EMS",
-        ["dodgeEMS"] = "Dodge EMS",
-        ["qrv"] = "Ford Setina EMS",
+		["f750"] = "Krankenwagen",
+        ["exp"] = "Explorer",
 	},
 	-- Grade 3
 	[3] = {
-		["ambulance"] = "Ambulance",
-        ["aemsv450"] = "Ambulance 2",
-        ["ambulance"] = "Ford EMS",
-        ["dodgeEMS"] = "Dodge EMS",
-        ["qrv"] = "Ford Setina EMS",
+		["f750"] = "Krankenwagen",
+        ["exp"] = "Explorer",
 	},
 	-- Grade 4
 	[4] = {
-		["ambulance"] = "Ambulance",
-        ["aemsv450"] = "Ambulance 2",
-        ["ambulance"] = "Ford EMS",
-        ["dodgeEMS"] = "Dodge EMS",
-        ["qrv"] = "Ford Setina EMS",
-	}
+		["f750"] = "Krankenwagen",
+        ["exp"] = "Explorer",
+	},
+    [5] = {
+		["f750"] = "Krankenwagen",
+        ["exp"] = "Explorer",
+	},
+    [6] = {
+		["f750"] = "Krankenwagen",
+        ["exp"] = "Explorer",
+	},
+    [7] = {
+		["f750"] = "Krankenwagen",
+        ["exp"] = "Explorer",
+	},
+    [8] = {
+		["f750"] = "Krankenwagen",
+        ["exp"] = "Explorer",
+	},
+    [9] = {
+		["f750"] = "Krankenwagen",
+        ["exp"] = "Explorer",
+	},
+    [10] = {
+		["f750"] = "Krankenwagen",
+        ["exp"] = "Explorer",
+        ["md_bmwr"] = "BMW",
+	},
 }
 
 Config.Items = { -- Items found in the ambulance shop for players with the ambulance job to purchase

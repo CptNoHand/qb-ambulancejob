@@ -1,10 +1,10 @@
 Laststand = Laststand or {}
-Laststand.ReviveInterval = 300
-Laststand.MinimumRevive = 350
+Laststand.ReviveInterval = 360
+Laststand.MinimumRevive = 300
 InLaststand = false
 LaststandTime = 0
-lastStandDict = "combat@damage@writhe"
-lastStandAnim = "writhe_loop"
+lastStandDict = "dead"
+lastStandAnim = "dead_a"
 isEscorted = false
 local isEscorting = false
 
@@ -42,10 +42,8 @@ function SetLaststand(bool)
     local ped = PlayerPedId()
     if bool then
         Wait(1000)
-        while GetEntitySpeed(ped) > 0.5 or IsPedRagdoll(ped) do Wait(10) end
         local pos = GetEntityCoords(ped)
         local heading = GetEntityHeading(ped)
-        TriggerServerEvent("InteractSound_SV:PlayOnSource", "demo", 0.1)
         LaststandTime = Laststand.ReviveInterval
         if IsPedInAnyVehicle(ped) then
             local veh = GetVehiclePedIsIn(ped)

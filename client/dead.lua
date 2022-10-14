@@ -16,12 +16,7 @@ function OnDeath()
     if not isDead then
         isDead = true
         TriggerServerEvent("hospital:server:SetDeathStatus", true)
-        TriggerServerEvent("InteractSound_SV:PlayOnSource", "demo", 0.1)
         local player = PlayerPedId()
-
-        while GetEntitySpeed(player) > 0.5 or IsPedRagdoll(player) do
-            Wait(10)
-        end
 
         if isDead then
             local pos = GetEntityCoords(player)
@@ -126,29 +121,17 @@ emsNotified = false
 
 CreateThread(function()
 	while true do
-        local sleep = 1000
+        sleep = 1000
 		if isDead or InLaststand then
-            sleep = 5
+            sleep = 7
             local ped = PlayerPedId()
-            DisableAllControlActions(0)
-            EnableControlAction(0, 1, true)
-			EnableControlAction(0, 2, true)
-			EnableControlAction(0, 245, true)
-            EnableControlAction(0, 38, true)
-            EnableControlAction(0, 0, true)
-            EnableControlAction(0, 322, true)
-            EnableControlAction(0, 288, true)
-            EnableControlAction(0, 213, true)
-            EnableControlAction(0, 249, true)
-            EnableControlAction(0, 46, true)
-            EnableControlAction(0, 47, true)
 
             if isDead then
-                if not isInHospitalBed then
+                if not isInHospitalBed then 
                     if deathTime > 0 then
-                        DrawTxt(0.93, 1.44, 1.0,1.0,0.6, Lang:t('info.respawn_txt', {deathtime = math.ceil(deathTime)}), 255, 255, 255, 255)
+                        DrawTxt(0.838, 1.45, 1.0, 1.0, 0.5, "RESPAWN IN: ~r~" .. math.ceil(deathTime) .. "~w~ SECONDS, FLEX (G) TO CALL FOR HELP", 255, 255, 255, 255)
                     else
-                        DrawTxt(0.865, 1.44, 1.0, 1.0, 0.6, Lang:t('info.respawn_revive', {holdtime = hold, cost = Config.BillCost}), 255, 255, 255, 255)
+                        DrawTxt(0.838, 1.45, 1.0, 1.0, 0.6, "~w~ HOLD ~r~[E] ("..hold..")~w~ TO RESPAWN ~r~($"..Config.BillCost..")~w~", 255, 255, 255, 255)
                     end
                 end
 
@@ -158,7 +141,7 @@ CreateThread(function()
                         TaskPlayAnim(ped, "veh@low@front_ps@idle_duck", "sit", 1.0, 1.0, -1, 1, 0, 0, 0, 0)
                     end
                 else
-                    if isInHospitalBed then
+                    if isInHospitalBed then 
                         if not IsEntityPlayingAnim(ped, inBedDict, inBedAnim, 3) then
                             loadAnimDict(inBedDict)
                             TaskPlayAnim(ped, inBedDict, inBedAnim, 1.0, 1.0, -1, 1, 0, 0, 0, 0)
