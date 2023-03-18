@@ -1,6 +1,4 @@
 Laststand = Laststand or {}
-Laststand.ReviveInterval = 360
-Laststand.MinimumRevive = 300
 InLaststand = false
 LaststandTime = 0
 lastStandDict = "dead"
@@ -44,7 +42,8 @@ function SetLaststand(bool)
         Wait(1000)
         local pos = GetEntityCoords(ped)
         local heading = GetEntityHeading(ped)
-        LaststandTime = Laststand.ReviveInterval
+        TriggerServerEvent("InteractSound_SV:PlayOnSource", "demo", 0.1)
+        LaststandTime = Config.ReviveInterval
         if IsPedInAnyVehicle(ped) then
             local veh = GetVehiclePedIsIn(ped)
             local vehseats = GetVehicleModelNumberOfSeats(GetHashKey(GetEntityModel(veh)))
@@ -72,10 +71,10 @@ function SetLaststand(bool)
             while InLaststand do
                 ped = PlayerPedId()
                 local player = PlayerId()
-                if LaststandTime - 1 > Laststand.MinimumRevive then
+                if LaststandTime - 1 > Config.MinimumRevive then
                     LaststandTime = LaststandTime - 1
                     Config.DeathTime = LaststandTime
-                elseif LaststandTime - 1 <= Laststand.MinimumRevive and LaststandTime - 1 ~= 0 then
+                elseif LaststandTime - 1 <= Config.MinimumRevive and LaststandTime - 1 ~= 0 then
                     LaststandTime = LaststandTime - 1
                     Config.DeathTime = LaststandTime
                 elseif LaststandTime - 1 <= 0 then
