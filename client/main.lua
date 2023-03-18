@@ -11,6 +11,7 @@ local doctorCount = 0
 local CurrentDamageList = {}
 local cam = nil
 local playerArmor = nil
+local DutyBlips = {}
 inBedDict = "anim@gangops@morgue@table@"
 inBedAnim = "body_search"
 isInHospitalBed = false
@@ -677,7 +678,7 @@ RegisterNetEvent('hospital:client:SendBillEmail', function(amount)
             gender = Lang:t('info.mrs')
         end
         local charinfo = QBCore.Functions.GetPlayerData().charinfo
-        TriggerServerEvent('qb-phone:server:sendNewMail', {
+        TriggerServerEvent('qs-smartphone:server:sendNewMail', {
             sender = Lang:t('mail.sender'),
             subject = Lang:t('mail.subject'),
             message = Lang:t('mail.message', {gender = gender, lastname = charinfo.lastname, costs = amount}),
@@ -696,10 +697,60 @@ RegisterNetEvent('hospital:client:adminHeal', function()
     TriggerServerEvent("hospital:server:resetHungerThirst")
 end)
 
+-- Functions
+local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
+    local ped = GetPlayerPed(playerId)
+    local blip = GetBlipFromEntity(ped)
+    if not DoesBlipExist(blip) then
+        if NetworkIsPlayerActive(playerId) then
+            blip = AddBlipForEntity(ped)
+        else
+            blip = AddBlipForCoord(playerLocation.x, playerLocation.y, playerLocation.z)
+        end
+        SetBlipSprite(blip, 1)
+        ShowHeadingIndicatorOnBlip(blip, true)
+        SetBlipRotation(blip, math.ceil(playerLocation.w))
+        SetBlipScale(blip, 1.0)
+        if playerJob == "ambulance" then
+            SetBlipColour(blip, 5)
+        end
+        SetBlipAsShortRange(blip, true)
+        BeginTextCommandSetBlipName('STRING')
+        AddTextComponentString(playerLabel)
+        EndTextCommandSetBlipName(blip)
+        DutyBlips[#DutyBlips+1] = blip
+    end
+
+    if GetBlipFromEntity(PlayerPedId()) == blip then
+        -- Ensure we remove our own blip.
+        RemoveBlip(blip)
+    end
+end
+
+RegisterNetEvent('hospital:client:UpdateBlips', function(players)
+    if PlayerJob and (PlayerJob.name == 'ambulance') and
+        onDuty then
+        if DutyBlips then
+            for _, v in pairs(DutyBlips) do
+                RemoveBlip(v)
+            end
+        end
+        DutyBlips = {}
+        if players then
+            for _, data in pairs(players) do
+                local id = GetPlayerFromServerId(data.source)
+                CreateDutyBlips(id, data.label, data.job, data.location)
+
+            end
+        end
+    end
+end)
+
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
     local ped = PlayerPedId()
     TriggerServerEvent("hospital:server:SetDeathStatus", false)
     TriggerServerEvent('hospital:server:SetLaststandStatus', false)
+    TriggerServerEvent("hospital:server:UpdateBlips")
     TriggerServerEvent("hospital:server:SetArmor", GetPedArmour(ped))
     if bedOccupying then
         TriggerServerEvent("hospital:server:LeaveBed", bedOccupying)
@@ -709,6 +760,12 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
     SetEntityInvincible(ped, false)
     SetPedArmour(ped, 0)
     ResetAll()
+    if DutyBlips then
+        for _, v in pairs(DutyBlips) do
+            RemoveBlip(v)
+        end
+        DutyBlips = {}
+    end
 end)
 
 -- Threads

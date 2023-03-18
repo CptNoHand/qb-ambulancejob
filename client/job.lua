@@ -2,6 +2,7 @@ local PlayerJob = {}
 local onDuty = false
 local currentGarage = 0
 local currentHospital
+local DutyBlips = {}
 
 -- Functions
 
@@ -86,9 +87,18 @@ RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
         onDuty = PlayerJob.onduty
         if PlayerJob.onduty then
             TriggerServerEvent("hospital:server:AddDoctor", PlayerJob.name)
+            TriggerServerEvent("hospital:server:UpdateBlips")
         else
             TriggerServerEvent("hospital:server:RemoveDoctor", PlayerJob.name)
         end
+    end
+    if PlayerJob and PlayerJob.name ~= "ambulance" then
+        if DutyBlips then
+            for _, v in pairs(DutyBlips) do
+                RemoveBlip(v)
+            end
+        end
+        DutyBlips = {}
     end
 end)
 
@@ -129,6 +139,7 @@ end)
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
     if PlayerJob.name == 'ambulance' and onDuty then
         TriggerServerEvent("hospital:server:RemoveDoctor", PlayerJob.name)
+        TriggerServerEvent("hospital:server:UpdateBlips")
     end
 end)
 
@@ -136,8 +147,10 @@ RegisterNetEvent('QBCore:Client:SetDuty', function(duty)
     if PlayerJob.name == 'ambulance' and duty ~= onDuty then
         if duty then
             TriggerServerEvent("hospital:server:AddDoctor", PlayerJob.name)
+            TriggerServerEvent("hospital:server:UpdateBlips")
         else
             TriggerServerEvent("hospital:server:RemoveDoctor", PlayerJob.name)
+            TriggerServerEvent("hospital:server:UpdateBlips")
         end
     end
 

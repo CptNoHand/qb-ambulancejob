@@ -1,10 +1,10 @@
 Config = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add setr UseTarget true)
-Config.MinimalDoctors = 2 -- How many players with the ambulance job to prevent the hospital check-in system from being used
+Config.MinimalDoctors = 1 -- How many players with the ambulance job to prevent the hospital check-in system from being used
 Config.DocCooldown = 1 -- Cooldown between doctor calls allowed, in minutes
 Config.WipeInventoryOnRespawn = true -- Enable or disable removing all the players items when they respawn at the hospital
 Config.Helicopter = "polmav" -- Helicopter model that players with the ambulance job can use
-Config.BillCost = 2000 -- Price that players are charged for using the hospital check-in system
+Config.BillCost = 500 -- Price that players are charged for using the hospital check-in system
 Config.DeathTime = 300 -- How long the timer is for players to bleed out completely and respawn at the hospital
 Config.PainkillerInterval = 60 -- Set the length of time painkillers last (per one)
 Config.HealthDamage = 5 -- Minumum damage done to health before checking for injuries
@@ -94,51 +94,51 @@ Config.AuthorizedVehicles = { -- Vehicles players can use based on their ambulan
 	-- Grade 0
 	[0] = {
 		["f750"] = "Krankenwagen",
-        ["exp"] = "Explorer",
+        ["emsexp"] = "Explorer",
 	},
 	-- Grade 1
 	[1] = {
 		["f750"] = "Krankenwagen",
-        ["exp"] = "Explorer",
+        ["emsexp"] = "Explorer",
 	},
 	-- Grade 2
 	[2] = {
 		["f750"] = "Krankenwagen",
-        ["exp"] = "Explorer",
+        ["emsexp"] = "Explorer",
 	},
 	-- Grade 3
 	[3] = {
 		["f750"] = "Krankenwagen",
-        ["exp"] = "Explorer",
+        ["emsexp"] = "Explorer",
 	},
 	-- Grade 4
 	[4] = {
 		["f750"] = "Krankenwagen",
-        ["exp"] = "Explorer",
+        ["emsexp"] = "Explorer",
 	},
     [5] = {
 		["f750"] = "Krankenwagen",
-        ["exp"] = "Explorer",
+        ["emsexp"] = "Explorer",
 	},
     [6] = {
 		["f750"] = "Krankenwagen",
-        ["exp"] = "Explorer",
+        ["emsexp"] = "Explorer",
 	},
     [7] = {
 		["f750"] = "Krankenwagen",
-        ["exp"] = "Explorer",
+        ["emsexp"] = "Explorer",
 	},
     [8] = {
 		["f750"] = "Krankenwagen",
-        ["exp"] = "Explorer",
+        ["emsexp"] = "Explorer",
 	},
     [9] = {
 		["f750"] = "Krankenwagen",
-        ["exp"] = "Explorer",
+        ["emsexp"] = "Explorer",
 	},
     [10] = {
 		["f750"] = "Krankenwagen",
-        ["exp"] = "Explorer",
+        ["emsexp"] = "Explorer",
         ["md_bmwr"] = "BMW",
 	},
 }

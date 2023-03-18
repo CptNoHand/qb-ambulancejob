@@ -101,6 +101,30 @@ RegisterNetEvent('hospital:server:ambulanceAlert', function(text)
     end
 end)
 
+-- Functions
+local function UpdateBlips()
+    local dutyPlayers = {}
+    local players = QBCore.Functions.GetQBPlayers()
+    for _, v in pairs(players) do
+        if v and (v.PlayerData.job.name == "ambulance") and v.PlayerData.job.onduty then
+            local coords = GetEntityCoords(GetPlayerPed(v.PlayerData.source))
+            local heading = GetEntityHeading(GetPlayerPed(v.PlayerData.source))
+            dutyPlayers[#dutyPlayers+1] = {
+                source = v.PlayerData.source,
+                label = v.PlayerData.metadata["callsign"],
+                job = v.PlayerData.job.name,
+                location = {
+                    x = coords.x,
+                    y = coords.y,
+                    z = coords.z,
+                    w = heading
+                }
+            }
+        end
+    end
+    TriggerClientEvent("hospital:client:UpdateBlips", -1, dutyPlayers)
+end
+
 RegisterNetEvent('hospital:server:LeaveBed', function(id)
     TriggerClientEvent('hospital:client:SetBed', -1, id, false)
 end)
@@ -463,3 +487,14 @@ QBCore.Functions.CreateUseableItem("firstaid", function(source, item)
 end)
 
 exports('GetDoctorCount', function() return doctorCount end)
+
+RegisterNetEvent('hospital:server:UpdateBlips', function()
+    -- KEEP FOR REF BUT NOT NEEDED ANYMORE.
+end)
+
+CreateThread(function()
+    while true do
+        Wait(5000)
+        UpdateBlips()
+    end
+end)
